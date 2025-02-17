@@ -3,7 +3,7 @@ from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton, Keyboar
 from telegram.ext import Application, CommandHandler, MessageHandler, filters, CallbackContext, CallbackQueryHandler
 
 # Replace with your Google Maps API key (if needed)
-GOOGLE_MAPS_API_KEY = 'AIzaSyCmPQjKSqPVwlYY-PnVfyLJG5HCX3k09cU'
+GOOGLE_MAPS_API_KEY = 'YOUR_GOOGLE_MAPS_API_KEY'
 
 # Dictionary to store building names, IDs, and coordinates
 buildings = {
@@ -106,7 +106,7 @@ async def handle_location(update: Update, context: CallbackContext) -> None:
     )
 
 def main() -> None:
-    application = Application.builder().token('7680624147:AAENg-0xh-shgkQYTne6kdZ38C_3rUj5k2Y').build()
+    application = Application.builder().token('YOUR_TELEGRAM_BOT_TOKEN').build()
 
     application.add_handler(CommandHandler("start", start))
     application.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_message))
